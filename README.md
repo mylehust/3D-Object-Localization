@@ -1,5 +1,5 @@
 # 3D-Object-Localization
-1. <a name="_toc154356501"></a>**Giới thiệu bài toán**
+**Giới thiệu bài toán**
 Bài toán chuyển đổi tọa độ ảnh 2D sang tọa độ ở trạng thái 3D trở thành một khía cạnh quan trọng để nâng cao khả năng tương tác của robot, đặc biệt là trong quá trình gắp vật ở môi trường sản xuất công nghiệp. Thay vì dựa vào thông tin hình ảnh 2D truyền thống, chúng ta cần một quy trình chuyển đổi thông tin đó thành không gian 3D, giúp robot có khả năng hiểu biết về hình dạng, kích thước và vị trí của vật thể trong không gian. Sự kết hợp giữa hình ảnh 2D và dữ liệu 3D cung cấp cho robot cái nhìn đa chiều, mở ra khả năng tối ưu hóa quá trình gắp vật, tránh va chạm không mong muốn.
 
 <a name="_toc154356503"></a>**Mô hình, Lý thuyết và Thuật toán** 
