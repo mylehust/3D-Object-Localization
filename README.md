@@ -1,11 +1,6 @@
 # 3D-Object-Localization
-
-<a name="_toc154356500"></a>**Chương 1: Tổng quan** 
-
 1. <a name="_toc154356501"></a>**Giới thiệu bài toán**
-
-Trong bối cảnh ngày càng tăng cường của tự động hóa và robot hóa trong các ứng dụng công nghiệp và dịch vụ, khả năng của robot trong việc nhận diện và tương tác với môi trường ngày càng trở nên quan trọng. Một trong những thách thức lớn là khả năng của robot trong việc nhìn và hiểu rõ đối tượng một cách chi tiết từ hình ảnh 2D. Bài toán chuyển đổi tọa độ ảnh 2D sang tọa độ ở trạng thái 3D trở thành một khía cạnh quan trọng để nâng cao khả năng tương tác của robot, đặc biệt là trong quá trình gắp vật ở môi trường sản xuất công nghiệp. Thay vì dựa vào thông tin hình ảnh 2D truyền thống, chúng ta cần một quy trình chuyển đổi thông tin đó thành không gian 3D, giúp robot có khả năng hiểu biết về hình dạng, kích thước và vị trí của vật thể trong không gian. Ứng dụng này không chỉ giúp robot chọn lựa vật thể cần gắp một cách chính xác mà còn cải thiện khả năng xử lý và tương tác trong môi trường đa dạng. Sự kết hợp giữa hình ảnh 2D và dữ liệu 3D cung cấp cho robot cái nhìn đa chiều, mở ra khả năng tối ưu hóa quá trình gắp vật, tránh va chạm không mong muốn và tăng cường độ an toàn trong các ứng dụng công nghiệp, logictics, và dịch vụ. Đồng thời, việc áp dụng công nghệ này không chỉ làm tăng cường khả năng của robot mà còn mở ra những tiềm năng mới trong lĩnh vực tự động hóa và dịch vụ thông minh.
-
+Bài toán chuyển đổi tọa độ ảnh 2D sang tọa độ ở trạng thái 3D trở thành một khía cạnh quan trọng để nâng cao khả năng tương tác của robot, đặc biệt là trong quá trình gắp vật ở môi trường sản xuất công nghiệp. Thay vì dựa vào thông tin hình ảnh 2D truyền thống, chúng ta cần một quy trình chuyển đổi thông tin đó thành không gian 3D, giúp robot có khả năng hiểu biết về hình dạng, kích thước và vị trí của vật thể trong không gian. Sự kết hợp giữa hình ảnh 2D và dữ liệu 3D cung cấp cho robot cái nhìn đa chiều, mở ra khả năng tối ưu hóa quá trình gắp vật, tránh va chạm không mong muốn.
 
 <a name="_toc154356503"></a>**Mô hình, Lý thuyết và Thuật toán** 
 
@@ -13,18 +8,15 @@ Trong bối cảnh ngày càng tăng cường của tự động hóa và robot 
 
 ![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/60f42e64-a6be-45d2-a0a9-355c20e0c080)
 
-
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.003.png)
-
 <a name="_toc154358570"></a>***Hình 1: Mô phỏng hệ thống***
 
 Bài toán đưa ra với mục đích có thể ứng dụng trong công nghiệp, nên hệ thống sẽ bao gồm 1 camera được chiếu thẳng đứng từ trên xuống với khoảng cách là không đổi, một vật 3D vuông góc với camera và có hệ thống chiếu sáng đầy đủ để đạt được hiệu suất cao nhất.
 
 1. <a name="_toc154356505"></a>**Lý thuyết**
 
-Hiệu chỉnh máy ảnh là không thể thiếu trong các ứng dụng thị giác máy tính vì hầu hết các hệ thống thị giác máy tính đều bị ảnh hưởng nhiều bởi độ chính xác của việc hiệu chuẩn. Hiệu chuẩn liên quan đến những phát triển chính trong quá trình tái tạo 3D bao gồm khôi phục hình học của máy ảnh, trích xuất và phân tích thông tin 3D. Kỹ thuật này cũng được sử dụng để ước tính vị trí 3D và góc quay của camera so với các thông số bên ngoài và bên trong, cung cấp thông tin về tọa độ thế giới 3D và thể hiện các đặc tính quang học của camera tương ứng. Việc xác định các tham số của hàm để giải thích ánh xạ từ vị trí của một điểm trong tọa độ 3D đến vị trí của một điểm trên mặt phẳng ảnh là một trong những mục tiêu chính của việc hiệu chỉnh máy ảnh. Các tham số hình học, còn được gọi là tham số camera, xác định theo kinh nghiệm mối quan hệ giữa vị trí camera và tọa độ thế giới 3D.
+Hiệu chỉnh máy ảnh là không thể thiếu trong các ứng dụng thị giác máy tính vì hầu hết các hệ thống thị giác máy tính đều bị ảnh hưởng nhiều bởi độ chính xác của việc hiệu chuẩn. Hiệu chuẩn liên quan đến những phát triển chính trong quá trình tái tạo 3D bao gồm khôi phục hình học của máy ảnh, trích xuất và phân tích thông tin 3D. Kỹ thuật này cũng được sử dụng để ước tính vị trí 3D và góc quay của camera so với các thông số bên ngoài và bên trong, cung cấp thông tin về tọa độ thế giới 3D và thể hiện các đặc tính quang học của camera tương ứng. 
 
-Bên cạnh đó việc sử dụng bàn cờ trong hiệu chỉnh máy ảnh, cho phép các thông số máy ảnh trích xuất thông tin chính xác hơn từ hình ảnh. 
+Việc xác định các tham số của hàm để giải thích ánh xạ từ vị trí của một điểm trong tọa độ 3D đến vị trí của một điểm trên mặt phẳng ảnh là một trong những mục tiêu chính của việc hiệu chỉnh máy ảnh. Các tham số hình học, còn được gọi là tham số camera, xác định theo kinh nghiệm mối quan hệ giữa vị trí camera và tọa độ thế giới 3D.Bên cạnh đó việc sử dụng bàn cờ trong hiệu chỉnh máy ảnh, cho phép các thông số máy ảnh trích xuất thông tin chính xác hơn từ hình ảnh. 
 
 Có 2 thông số chính trong máy ảnh:
 
@@ -58,9 +50,8 @@ Giả sử đã có tọa độ 2D điểm ảnh, mục đích của ta là cầ
 
   Đầu tiên, ta xét tọa độ điểm ảnh (2D) có tọa độ là (x,y) với đơn vị là pixel. Vì các tọa độ trên hệ camera và hệ thế giới được tính theo đơn vị mm, ta cần phải chuyển đổi từ hệ pixel sang hệ mm.** Ta chọn gốc của khung tham như hình vẽ. 
 
-  ![A diagram of a graph with a diagram and a diagram of a graph
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/e0154cd4-68de-4b3e-a925-43aada3a98a3)
 
-Description automatically generated with medium confidence](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.007.png)
 
   <a name="_toc154358574"></a>**Hình 5: Sơ đồ chuyển đổi giữa hệ pixel và minimet**
 
@@ -71,10 +62,8 @@ Description automatically generated with medium confidence](Aspose.Words.d566849
 - **Chuyển đổi từ hệ pixel sang camera**
 
   Một điểm 2D được ký hiệu là m = [u, v]<sup>T</sup>. Và điểm 3D ánh xạ trên hệ camera là (Xc, Yc, Zc). Do 2 vecto khác nhau về chiều, nên chúng ta sẽ đồng nhất hệ tọa độ mặt phẳng bằng cách tăng cường bằng cách thêm 1 làm phần tử cuối cùng của vecto 2D: m<sub>e</sub> = [u, v, 1]<sup>T</sup>
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/9b5aa618-9bf9-4302-907c-f4b0d7ed9888)
 
-  ![A diagram of a graph
-
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.009.png)
 
   <a name="_toc154358575"></a>**Hình 6: Chuyển đổi từ hệ 2D sang hệ camera**
 
@@ -86,9 +75,8 @@ Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820
 
   Để chuyển đổi từ tọa độ camera sang tọa độ thực, vị trí mà chúng ta bàn tới sẽ bao gồm vector quay và Ma trận xoay
 
-  ![A diagram of a line
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/2e9c57f1-18a5-4a54-ba65-285d82d79cdb)
 
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.012.png)
 
   <a name="_toc154358576"></a>**Hình 7: Chuyển đổi từ hệ Camera sang hệ thế giới thực**
 
@@ -112,21 +100,14 @@ Do đó, tổng quát để chuyển từ hệ tọa độ thực (3D) sang hệ
 
 Trong đó R và t lần lượt là các phần tử quay và tịnh tiến của ma trận bên ngoài, trong khi K đại diện cho ma trận bên trong. Các tham số bên ngoài chuyển đổi tọa độ 3D thành tọa độ camera và sau đó các tham số bên trong chuyển đổi tọa độ camera thành mặt phẳng hình ảnh như hình dưới đây:
 
-![A diagram of a tree and a point
-
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.018.png)
-
-<a name="_toc154358577"></a>**Hình 8: Tổng quan ma trận Camera**
-
-<a name="_toc154356507"></a>**Chương 3: Kết quả và đánh giá**
+<a name="_toc154356507"></a>**Kết quả và đánh giá**
 
 1. <a name="_toc154356508"></a>**Quá trình tìm tọa độ tâm của vật trên ảnh 2D:** 
 
    Được thực hiện bằng cách xét ngưỡng màu của vật, và tìm các cạnh biên của vật tương ứng. Sau đó ta bounding box vật và tìm tọa độ trọng tâm dựa vào hình bao.
 
-![A checkered paper with a green box on it
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/62b47669-9db9-4168-95bd-d31e98b28389)
 
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.019.png)
 
 <a name="_toc154358578"></a>**Hình 9: Kết quả Bounding box & center object**
 
@@ -137,20 +118,14 @@ Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820
 
    Vì trong quá trình đo đạc trọng tâm ở thế giới thực có thể xảy ra sai số, trước tiên ta tiến hành đo độ dài cạnh của vật để kiểm gia sai số
 
-![A computer screen shot of a box on a checkered paper
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/dce6069f-fa9e-45fa-a756-e61e8a42d40b)
 
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.020.png)
-
-<a name="_toc154358579"></a>**Hình 10: Kết quả kiểm thử**
 
 - **Nhận xét:** Kết quả nhận được là 92.75mm, trong khi số đo thực tế là 91mm
 - sai số chưa tới 2%
 
 Khi đã có tọa độ tâm trong ảnh 2D (pixel), ta tiến hành nhân nghịch đảo với các ma trận K, R để tìm ra tọa độ trong thế giới thực 3D
 
-![A screen shot of a computer code
-
-Description automatically generated](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.021.png)
 
 <a name="_toc154358580"></a>**Hình 11: Thực nghiệm kết quả tọa độ vật 3D**
 
