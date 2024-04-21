@@ -69,9 +69,11 @@ Giả sử đã có tọa độ 2D điểm ảnh, mục đích của ta là cầ
 
   Đồng nhất tọa độ ta thu được công thức sau:
 
-  ![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.010.png)
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/cb2adb26-82eb-407b-b48b-959241177cce)
 
-  Đặt ma trận thông số nội tại của máy ảnh: ![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.011.png)à **Intrinsic Matrix**
+
+  Đặt ma trận thông số nội tại của máy ảnh: ![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/1d7278eb-74bd-4d21-beb7-cb9ae32f7e41)
+ **Intrinsic Matrix**
 
   Để chuyển đổi từ tọa độ camera sang tọa độ thực, vị trí mà chúng ta bàn tới sẽ bao gồm vector quay và Ma trận xoay
 
@@ -80,23 +82,25 @@ Giả sử đã có tọa độ 2D điểm ảnh, mục đích của ta là cầ
 
   <a name="_toc154358576"></a>**Hình 7: Chuyển đổi từ hệ Camera sang hệ thế giới thực**
 
-  Trong đó ma trận xoay có dạng: ![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.013.png)
+  Trong đó ma trận xoay có dạng: ![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/dcc4e67b-c0f3-4232-91b1-c1ae3e707643)
+
 
   Với các hàng đại diện với hướng theo tứ tự xc yc zc trong tọa độ thế giới
 
-  Từ hệ tọa độ trên, ta có thể suy ra ![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.014.png)
+  ![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/53745eed-f8e8-47a6-a838-d40fa1a51158)
 
-Hay: ![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.015.png)
 
 Đồng nhất hệ tọa độ ta thu được công thức như sau:
 
-![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.016.png)à **Extrinsic Matrix**
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/8c7efac0-72d1-4ce3-9b07-a2cb2e419cc2)
+
 
 Ma trận 4x4 trên còn được gọi là ma trận ngoài camera. Để chuyển từ ma trận thế giới sang trận camera, ta sẽ thông qua ma trận Extrinsic
 
 Do đó, tổng quát để chuyển từ hệ tọa độ thực (3D) sang hệ tọa độ ảnh (2D):
 
-![](Aspose.Words.d566849a-569b-49f5-bf2b-d9b820d787ee.017.png)
+![image](https://github.com/mylehust/3D-Object-Localization/assets/109675981/1de2d673-9029-48cb-b4da-61f2a12ae232)
+
 
 Trong đó R và t lần lượt là các phần tử quay và tịnh tiến của ma trận bên ngoài, trong khi K đại diện cho ma trận bên trong. Các tham số bên ngoài chuyển đổi tọa độ 3D thành tọa độ camera và sau đó các tham số bên trong chuyển đổi tọa độ camera thành mặt phẳng hình ảnh như hình dưới đây:
 
